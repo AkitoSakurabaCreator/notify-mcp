@@ -1,5 +1,10 @@
 # notify-mcp
 
+[![npm version](https://img.shields.io/npm/v/@akito.sakuraba/notify-mcp.svg)](https://www.npmjs.com/package/@akito.sakuraba/notify-mcp)
+[![CI](https://github.com/AkitoSakurabaCreator/notify-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/AkitoSakurabaCreator/notify-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Node](https://img.shields.io/node/v/@akito.sakuraba/notify-mcp.svg)](./package.json)
+
 > 🇬🇧 **English README is at [README.md](./README.md).**
 
 クロスプラットフォーム対応のデスクトップ通知 MCP サーバ。1 つのパッケージで 3 OS × 5 クライアントをカバー。
