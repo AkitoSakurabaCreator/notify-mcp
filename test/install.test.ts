@@ -61,8 +61,11 @@ describe("listClients", () => {
 });
 
 describe("defaultServerEntry", () => {
-  it("uses npx -y notify-mcp", () => {
-    expect(defaultServerEntry()).toEqual({ command: "npx", args: ["-y", "notify-mcp"] });
+  it("uses npx -y @akito.sakuraba/notify-mcp", () => {
+    expect(defaultServerEntry()).toEqual({
+      command: "npx",
+      args: ["-y", "@akito.sakuraba/notify-mcp"],
+    });
   });
 });
 
@@ -77,7 +80,7 @@ describe("install — JSON clients (claude-code / cursor / claude-desktop / anti
       const data = JSON.parse(raw);
       expect(data.mcpServers.notify).toEqual({
         command: "npx",
-        args: ["-y", "notify-mcp"],
+        args: ["-y", "@akito.sakuraba/notify-mcp"],
       });
     });
 
@@ -101,7 +104,7 @@ describe("install — JSON clients (claude-code / cursor / claude-desktop / anti
       expect(merged.mcpServers.other).toEqual({ command: "node", args: ["./other.js"] });
       expect(merged.mcpServers.notify).toEqual({
         command: "npx",
-        args: ["-y", "notify-mcp"],
+        args: ["-y", "@akito.sakuraba/notify-mcp"],
       });
     });
 
@@ -121,7 +124,7 @@ describe("install — TOML client (codex)", () => {
     const data = parseToml(raw);
     expect(data).toMatchObject({
       mcp_servers: {
-        notify: { command: "npx", args: ["-y", "notify-mcp"] },
+        notify: { command: "npx", args: ["-y", "@akito.sakuraba/notify-mcp"] },
       },
     });
   });
@@ -141,7 +144,10 @@ describe("install — TOML client (codex)", () => {
     expect(data["model"]).toBe("gpt-5");
     const servers = data["mcp_servers"] as Record<string, unknown>;
     expect(servers["other"]).toEqual({ command: "node", args: ["./x.js"] });
-    expect(servers["notify"]).toEqual({ command: "npx", args: ["-y", "notify-mcp"] });
+    expect(servers["notify"]).toEqual({
+      command: "npx",
+      args: ["-y", "@akito.sakuraba/notify-mcp"],
+    });
   });
 });
 
@@ -186,7 +192,7 @@ describe("uninstall", () => {
       target,
       JSON.stringify({
         mcpServers: {
-          notify: { command: "npx", args: ["-y", "notify-mcp"] },
+          notify: { command: "npx", args: ["-y", "@akito.sakuraba/notify-mcp"] },
           keep: { command: "node", args: ["./k.js"] },
         },
       }),

@@ -95,7 +95,7 @@ export function findClient(id: string): ClientSpec | undefined {
 export function defaultServerEntry(): ServerEntry {
   return {
     command: "npx",
-    args: ["-y", "notify-mcp"],
+    args: ["-y", "@akito.sakuraba/notify-mcp"],
   };
 }
 

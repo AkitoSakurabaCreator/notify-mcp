@@ -23,11 +23,11 @@
 
 ```sh
 # その都度実行（推奨）
-npx -y notify-mcp
+npx -y @akito.sakuraba/notify-mcp
 
 # グローバルにインストールしたい場合
-pnpm add -g notify-mcp
-npm  i  -g notify-mcp
+pnpm add -g @akito.sakuraba/notify-mcp
+npm  i  -g @akito.sakuraba/notify-mcp
 ```
 
 ## ワンコマンドでクライアントに追加
@@ -36,26 +36,26 @@ npm  i  -g notify-mcp
 
 ```sh
 # 特定クライアントに追加（config が無ければ新規作成、あればマージ）
-npx notify-mcp install claude-code
-npx notify-mcp install claude-desktop
-npx notify-mcp install cursor
-npx notify-mcp install codex
-npx notify-mcp install antigravity
+npx -y @akito.sakuraba/notify-mcp install claude-code
+npx -y @akito.sakuraba/notify-mcp install claude-desktop
+npx -y @akito.sakuraba/notify-mcp install cursor
+npx -y @akito.sakuraba/notify-mcp install codex
+npx -y @akito.sakuraba/notify-mcp install antigravity
 
 # サポートしている全クライアントに一括追加
-npx notify-mcp install --all
+npx -y @akito.sakuraba/notify-mcp install --all
 
 # 実際に書き込まずプレビューだけ確認
-npx notify-mcp install --all --dry-run
+npx -y @akito.sakuraba/notify-mcp install --all --dry-run
 
 # mcpServers / mcp_servers 配下の key 名を変えたい場合
-npx notify-mcp install cursor --name desktop-notify
+npx -y @akito.sakuraba/notify-mcp install cursor --name desktop-notify
 
 # 各クライアントの config パスと存在状況を一覧
-npx notify-mcp list-clients
+npx -y @akito.sakuraba/notify-mcp list-clients
 
 # 後から外したいとき
-npx notify-mcp uninstall claude-code
+npx -y @akito.sakuraba/notify-mcp uninstall claude-code
 ```
 
 インストーラの動作:
@@ -87,7 +87,7 @@ config ファイルが破損していて parse できない場合も、バック
   "mcpServers": {
     "notify": {
       "command": "npx",
-      "args": ["-y", "notify-mcp"]
+      "args": ["-y", "@akito.sakuraba/notify-mcp"]
     }
   }
 }
@@ -97,7 +97,7 @@ config ファイルが破損していて parse できない場合も、バック
 # OpenAI Codex CLI （~/.codex/config.toml）
 [mcp_servers.notify]
 command = "npx"
-args = ["-y", "notify-mcp"]
+args = ["-y", "@akito.sakuraba/notify-mcp"]
 ```
 
 編集後にクライアントを再起動すると、`notify` / `list_sounds` / `play_sound` の 3 ツールが利用可能になります。
@@ -180,7 +180,7 @@ args = ["-y", "notify-mcp"]
 
 - PowerShell 5.1 以上が必要（Windows 10 / 11 標準搭載）。サードパーティの PS モジュールは不要です。
 - 通知はアクションセンターに表示されます。
-- AppUserModelID を持たないプロセスからの toast を抑制する設定の Windows もあります。その場合も `npx -y notify-mcp` 経由が最も安定します。
+- AppUserModelID を持たないプロセスからの toast を抑制する設定の Windows もあります。その場合も `npx -y @akito.sakuraba/notify-mcp` 経由が最も安定します。
 
 ### Linux (Ubuntu 等)
 

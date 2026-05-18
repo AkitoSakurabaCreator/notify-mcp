@@ -23,11 +23,11 @@ The package is intended to be run via `npx` so users do not have to install it g
 
 ```sh
 # one-shot (recommended)
-npx -y notify-mcp
+npx -y @akito.sakuraba/notify-mcp
 
 # or install globally
-pnpm add -g notify-mcp
-npm  i  -g notify-mcp
+pnpm add -g @akito.sakuraba/notify-mcp
+npm  i  -g @akito.sakuraba/notify-mcp
 ```
 
 ## One-command client setup
@@ -36,26 +36,26 @@ Instead of hand-editing each client's config, use the bundled installer:
 
 ```sh
 # Install into a specific client (creates the config if missing, merges if existing).
-npx notify-mcp install claude-code
-npx notify-mcp install claude-desktop
-npx notify-mcp install cursor
-npx notify-mcp install codex
-npx notify-mcp install antigravity
+npx -y @akito.sakuraba/notify-mcp install claude-code
+npx -y @akito.sakuraba/notify-mcp install claude-desktop
+npx -y @akito.sakuraba/notify-mcp install cursor
+npx -y @akito.sakuraba/notify-mcp install codex
+npx -y @akito.sakuraba/notify-mcp install antigravity
 
 # Install into every supported client at once.
-npx notify-mcp install --all
+npx -y @akito.sakuraba/notify-mcp install --all
 
 # Preview without writing.
-npx notify-mcp install --all --dry-run
+npx -y @akito.sakuraba/notify-mcp install --all --dry-run
 
 # Use a different server key inside mcpServers / mcp_servers.
-npx notify-mcp install cursor --name desktop-notify
+npx -y @akito.sakuraba/notify-mcp install cursor --name desktop-notify
 
 # Show every config path the installer would touch, and whether it exists.
-npx notify-mcp list-clients
+npx -y @akito.sakuraba/notify-mcp list-clients
 
 # Remove the entry later.
-npx notify-mcp uninstall claude-code
+npx -y @akito.sakuraba/notify-mcp uninstall claude-code
 ```
 
 The installer:
@@ -87,7 +87,7 @@ If you prefer to edit by hand, all five clients accept the same shape:
   "mcpServers": {
     "notify": {
       "command": "npx",
-      "args": ["-y", "notify-mcp"]
+      "args": ["-y", "@akito.sakuraba/notify-mcp"]
     }
   }
 }
@@ -97,7 +97,7 @@ If you prefer to edit by hand, all five clients accept the same shape:
 # OpenAI Codex CLI (~/.codex/config.toml)
 [mcp_servers.notify]
 command = "npx"
-args = ["-y", "notify-mcp"]
+args = ["-y", "@akito.sakuraba/notify-mcp"]
 ```
 
 After editing, restart the client. The tools `notify`, `list_sounds`, and `play_sound` will appear.
@@ -180,7 +180,7 @@ Absolute paths only. The file must exist, be a regular file, and be ≤ 10 MB. m
 
 - Requires PowerShell 5.1+ (ships with Windows 10/11). No third-party PowerShell module needed.
 - Toast notifications appear in the Action Center.
-- Some Windows policies suppress toast for non-AppUserModelID processes; using `npx -y notify-mcp` is the simplest robust default.
+- Some Windows policies suppress toast for non-AppUserModelID processes; using `npx -y @akito.sakuraba/notify-mcp` is the simplest robust default.
 
 ### Linux (Ubuntu / etc.)
 

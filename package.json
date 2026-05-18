@@ -1,5 +1,5 @@
 {
-  "name": "notify-mcp",
+  "name": "@akito.sakuraba/notify-mcp",
   "version": "0.1.0",
   "description": "Cross-platform desktop notification MCP server (macOS / Windows / Linux). Replaces per-host hook setup for Claude Code / Claude Desktop.",
   "type": "module",
