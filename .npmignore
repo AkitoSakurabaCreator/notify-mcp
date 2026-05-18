@@ -1,0 +1,12 @@
+src
+test
+scripts
+tsconfig.json
+.prettierrc
+.gitignore
+.github
+*.log
+*.tsbuildinfo
+coverage
+.vitest-cache
+node_modules
